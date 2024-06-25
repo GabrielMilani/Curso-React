@@ -24,6 +24,7 @@ import Search from './pages/Search/Search';
 import Post from './pages/Post/Post';
 import EditPost from './pages/EditPost/EditPost';
 
+
 function App() {
 
   const [user, setUser] = useState(undefined);
@@ -53,11 +54,11 @@ function App() {
               <Route path="/about" element={<About></About>} >About</Route>
               <Route path="/search" element={<Search></Search>} >Search</Route>
               <Route path="/posts/:id" element={<Post></Post>} >Post</Route>
-              <Route path="/posts/create" element={user ? <CreatePost></CreatePost> : <Navigate to="/login"></Navigate>} >Home</Route>
+              <Route path="/posts/create" element={user ? <CreatePost></CreatePost> : <Navigate to="/login"></Navigate>} >CreatePost</Route>
               <Route path="/posts/edit/:id" element={user ? <EditPost></EditPost> : <Navigate to="/login"></Navigate>} >EditPost</Route>
-              <Route path="/login" element={!user ? <Login></Login> : <Navigate to="/"></Navigate>} >Home</Route>
-              <Route path="/register" element={!user ? <Register></Register> : <Navigate to="/"></Navigate>} >About</Route>
-              <Route path="/dashboard" element={user ? <Dashboard></Dashboard> : <Navigate to="/login"></Navigate>} >About</Route>
+              <Route path="/login" element={!user ? <Login></Login> : <Navigate to="/"></Navigate>} >Login</Route>
+              <Route path="/register" element={!user ? <Register></Register> : <Navigate to="/"></Navigate>} >Register</Route>
+              <Route path="/dashboard" element={user ? <Dashboard></Dashboard> : <Navigate to="/login"></Navigate>} >Dashboard</Route>
             </Routes>
           </div>
           <Footer></Footer>
